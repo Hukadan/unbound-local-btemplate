@@ -2,7 +2,6 @@ ARG unbound_hostname=dns.home.hukadan.org
 ARG unbound_ip=10.0.0.21
 ARG pkg_cache_hostname=pkg.home.hukadan.org
 ARG pkg_cache_ip=10.0.0.11
-PKG void-zones-tools
 SYSRC local_unbound_enable=YES 
 SERVICE local_unbound start
 CP var/unbound/conf.d /var/unbound
