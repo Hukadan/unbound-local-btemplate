@@ -5,7 +5,7 @@ ARG pkg_cache_ip=10.0.0.11
 PKG void-zones-tools
 SYSRC local_unbound_enable=YES 
 SERVICE local_unbound start
-CP var/unbound/conf.d /var/unbound/conf.d
+CP var/unbound/conf.d /var/unbound
 RENDER /var/unbound/conf.d/local-data.conf
 CMD chown root:unbound /var/unbound/conf.d/local-data.conf
 CMD chown root:unbound /var/unbound/conf.d/access-control.conf
