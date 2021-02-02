@@ -1,0 +1,9 @@
+ARG unbound_hostname=dns.lan
+ARG unbound_ip=10.0.0.21
+ARG pkg_cache_hostname=pkg.lan
+ARG pkg_cache_ip=10.0.0.11
+
+CP var /
+SYSRC local_unbound_enable=YES 
+SERVICE local_unbound start
+RENDER /var/unbound/conf.d/local-data.conf
