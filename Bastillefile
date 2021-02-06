@@ -4,7 +4,7 @@ ARG pkg_cache_hostname=pkg.home.hukadan.org
 ARG pkg_cache_ip=10.0.0.11
 SYSRC local_unbound_enable=YES 
 SERVICE local_unbound start
-CP etc/resolf.conf /etc/resolv.conf
+CP etc/resolv.conf /etc/resolv.conf
 CP var/unbound/conf.d /var/unbound
 RENDER /var/unbound/conf.d/local-data.conf
 RENDER /etc/resolv.conf
