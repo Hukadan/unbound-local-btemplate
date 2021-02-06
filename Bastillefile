@@ -17,3 +17,4 @@ CP root/modify-unbound-conf.sh /root/modify-unbound-conf.sh
 CMD sh /root/modify-unbound-conf.sh
 CMD rm /root/modify-unbound-conf.sh
 CMD service local_unbound restart
+CP etc/cron.d/update-void-list /etc/cron.d/update-void-list
