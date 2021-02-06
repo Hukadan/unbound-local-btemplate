@@ -3,11 +3,16 @@ ARG unbound_ip=10.0.0.21
 ARG pkg_cache_hostname=pkg.home.hukadan.org
 ARG pkg_cache_ip=10.0.0.11
 SYSRC local_unbound_enable=YES 
-SERVICE local_unbound start
 CP etc/resolv.conf /etc/resolv.conf
 CP var/unbound/conf.d /var/unbound
 RENDER /var/unbound/conf.d/local-data.conf
 RENDER /etc/resolv.conf
 CMD chown root:unbound /var/unbound/conf.d/local-data.conf
 CMD chown root:unbound /var/unbound/conf.d/access-control.conf
+CMD service local_unbound restart
+PKG void-zones-tools
+CMD sh /usr/local/bin/void-zones-update.sh
+CP root/modify-unbound-conf.sh /root/modify-unbound-conf.sh
+CMD sh /root/modify-unbound-conf.sh
+CMD rm /root/modify-unbound-conf.sh
 CMD service local_unbound restart
