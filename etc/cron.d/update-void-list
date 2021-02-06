@@ -1,0 +1,2 @@
+@daily                          root    /bin/sh /usr/local/bin/void-zones-update.sh && service local_unbound restart
+
